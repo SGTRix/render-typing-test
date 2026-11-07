@@ -2,11 +2,17 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Render typing test</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; form-action 'none'; base-uri 'none'">
+<title>Render mock sign-in</title>
 <main>
-  <h1>Render typing test</h1>
-  <p>Type the words “sample text” below. This page has no submit button or backend.</p>
-  <label for="sample">Sample text</label>
-  <input id="sample" type="text" autocomplete="off" maxlength="40" spellcheck="false">
+  <h1>Render mock sign-in</h1>
+  <p>Use the sample username <code>demo</code> and sample password <code>render-test-123</code>. Use only these dummy values.</p>
+  <form id="mock-sign-in" autocomplete="off">
+    <p><label for="username">Sample username</label> <input id="username" maxlength="40" required></p>
+    <p><label for="password">Sample password</label> <input id="password" type="password" autocomplete="off" maxlength="40" required></p>
+    <button>Test sign-in</button>
+  </form>
+  <p id="result" role="status"></p>
 </main>
+<script src="/mock-sign-in.js" defer></script>
 </html>
